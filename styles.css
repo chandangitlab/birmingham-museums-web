@@ -1,0 +1,490 @@
+/* -------------------------------------------------------------
+   BIRMINGHAM MUSEUMS — RESPONSIVE STYLESHEET
+   Font: Inter (imported from Google Fonts)
+------------------------------------------------------------- */
+
+:root {
+  /* Color Palette */
+  --bg-outer: #121311;
+  --app-bg: #1d1e1b;
+  --navbar-bg: #2d2e27;
+  
+  /* Card Background Colors */
+  --card-sand: #e5dacb;
+  --card-sage: #959074;
+  --card-terracotta: #9e6a53;
+  --card-tan: #b7a68e;
+  
+  /* Typography Colors */
+  --text-dark: #24221d;
+  --text-dark-muted: #4a453e;
+  --text-terracotta-dark: #3a2218;
+  --text-light: #e5dacb;
+
+  /* Accent & Border Colors */
+  --border-dark: #2a2924;
+  --border-light: rgba(0, 0, 0, 0.15);
+  --btn-hover-sand: #f0e6d8;
+  --btn-hover-sage: #a5a083;
+  --btn-hover-terracotta: #ae775f;
+  --btn-hover-tan: #c6b59d;
+  
+  /* Radii */
+  --radius-outer: 24px;
+  --radius-card: 20px;
+  --radius-pill: 50px;
+  --radius-img: 16px;
+
+  /* Font Family */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Reset & Global Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-outer);
+  color: var(--text-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Main Container Frame */
+.app-viewport {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.app-canvas {
+  background-color: var(--app-bg);
+  border: 2px solid #363731;
+  border-radius: var(--radius-outer);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* -------------------------------------------------------------
+   NAVIGATION HEADER
+------------------------------------------------------------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--navbar-bg);
+  padding: 8px 12px;
+  border-radius: var(--radius-pill);
+  gap: 12px;
+}
+
+.nav-brand {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  transition: opacity 0.2s ease;
+}
+
+.nav-brand:hover {
+  opacity: 0.85;
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-pill {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-pill.active {
+  background-color: var(--card-sand);
+  color: var(--text-dark);
+  border-color: var(--card-sand);
+  font-weight: 600;
+}
+
+.nav-pill:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-contact {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.mobile-menu-btn {
+  display: none;
+}
+
+/* -------------------------------------------------------------
+   GRID LAYOUTS
+------------------------------------------------------------- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 16px;
+}
+
+.right-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bottom-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* -------------------------------------------------------------
+   CARD COMPONENTS
+------------------------------------------------------------- */
+.card {
+  border-radius: var(--radius-card);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* Card Variants */
+.card-sand {
+  background-color: var(--card-sand);
+  color: var(--text-dark);
+}
+
+.card-sage {
+  background-color: var(--card-sage);
+  color: var(--text-dark);
+}
+
+.card-terracotta {
+  background-color: var(--card-terracotta);
+  color: #2b1810;
+}
+
+.card-tan {
+  background-color: var(--card-tan);
+  color: var(--text-dark);
+}
+
+/* Badges & Typography */
+.badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid currentColor;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  width: fit-content;
+}
+
+.card-title {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+}
+
+.card-sand .card-title {
+  font-size: 30px;
+}
+
+.underline-accent {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2.5px;
+}
+
+.metadata-text {
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+/* Media Elements */
+.card-media {
+  width: 100%;
+  border-radius: var(--radius-img);
+  overflow: hidden;
+  margin: 14px 0;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-img);
+  transition: transform 0.4s ease;
+}
+
+.card:hover .card-img {
+  transform: scale(1.02);
+}
+
+.card-sand .card-media {
+  height: 380px;
+}
+
+.card-sage .card-body-horizontal {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 20px;
+  align-items: center;
+}
+
+.card-sage .card-media {
+  height: 200px;
+  margin: 0;
+}
+
+.card-terracotta .card-media {
+  height: 160px;
+  margin-bottom: 16px;
+}
+
+/* Dots Icon */
+.title-with-dots {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.dots-icon {
+  display: flex;
+  gap: 4px;
+}
+
+.dots-icon span {
+  width: 10px;
+  height: 10px;
+  background-color: currentColor;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Avatar Circle */
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.avatar-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1.5px solid var(--text-dark);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Table Footer in Tan Card */
+.card-table-footer {
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+
+.table-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.double-line {
+  border-bottom: 1px solid var(--text-dark);
+  box-shadow: 0 2px 0 0 var(--text-dark);
+  margin-top: 8px;
+}
+
+/* -------------------------------------------------------------
+   BUTTON & HOVER ANIMATION (REQUIREMENT 8)
+   Scale and Color Change effect on Hover
+------------------------------------------------------------- */
+.card-footer {
+  margin-top: 16px;
+  padding-top: 12px;
+}
+
+.btn-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 4px 6px 4px;
+  color: currentColor;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  transition: all 0.3s ease;
+  position: relative;
+
+  /* Requirement 8: Interactive scaling & color shift container */
+  border-radius: 8px;
+}
+
+/* Specific Hover Animation for Buttons: Scale & Color Lighter Effect */
+.btn-action:hover {
+  transform: scale(1.03); /* Grown slightly larger */
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Background Color Change on Hover per Card context */
+.card-sand .btn-action:hover {
+  background-color: var(--btn-hover-sand);
+  color: #000;
+}
+
+.card-sage .btn-action:hover {
+  background-color: var(--btn-hover-sage);
+  color: #000;
+}
+
+.card-terracotta .btn-action:hover {
+  background-color: var(--btn-hover-terracotta);
+  color: #fff;
+}
+
+.card-tan .btn-action:hover {
+  background-color: var(--btn-hover-tan);
+  color: #000;
+}
+
+/* Arrow Slide Animation */
+.btn-action .arrow {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.btn-action:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* -------------------------------------------------------------
+   RESPONSIVE MEDIA QUERIES (REQUIREMENT 5)
+   Laptop, Tablet, Mobile Breakpoints
+------------------------------------------------------------- */
+
+/* Laptop / Medium Desktop (<= 1100px) */
+@media (max-width: 1100px) {
+  .dashboard-grid {
+    grid-template-columns: 320px 1fr;
+  }
+  
+  .card-sage .card-body-horizontal {
+    grid-template-columns: 1fr 240px;
+  }
+
+  .card-sand .card-media {
+    height: 300px;
+  }
+}
+
+/* Tablet Layout (<= 900px) */
+@media (max-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-sage .card-body-horizontal {
+    grid-template-columns: 1fr 280px;
+  }
+
+  .nav-center {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: inline-block;
+  }
+}
+
+/* Small Tablet & Mobile Layout (<= 640px) */
+@media (max-width: 640px) {
+  body {
+    padding: 10px;
+  }
+
+  .app-canvas {
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .card-sage .card-body-horizontal {
+    grid-template-columns: 1fr;
+  }
+
+  .card-sage .card-media {
+    height: 180px;
+    margin-top: 14px;
+  }
+
+  .bottom-row {
+    grid-template-columns: 1fr;
+  }
+
+  .card-sand .card-media {
+    height: 240px;
+  }
+
+  .card-title {
+    font-size: 24px;
+  }
+  
+  .card-sand .card-title {
+    font-size: 26px;
+  }
+}
