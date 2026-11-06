@@ -1,27 +1,23 @@
-/* -------------------------------------------------------------
-   BIRMINGHAM MUSEUMS — RESPONSIVE STYLESHEET
-   Font: Inter (imported from Google Fonts)
-------------------------------------------------------------- */
 
 :root {
-  /* Color Palette */
+  
   --bg-outer: #121311;
   --app-bg: #1d1e1b;
   --navbar-bg: #2d2e27;
   
-  /* Card Background Colors */
+  
   --card-sand: #e5dacb;
   --card-sage: #959074;
   --card-terracotta: #9e6a53;
   --card-tan: #b7a68e;
   
-  /* Typography Colors */
+  
   --text-dark: #24221d;
   --text-dark-muted: #4a453e;
   --text-terracotta-dark: #3a2218;
   --text-light: #e5dacb;
 
-  /* Accent & Border Colors */
+  
   --border-dark: #2a2924;
   --border-light: rgba(0, 0, 0, 0.15);
   --btn-hover-sand: #f0e6d8;
@@ -29,17 +25,17 @@
   --btn-hover-terracotta: #ae775f;
   --btn-hover-tan: #c6b59d;
   
-  /* Radii */
+  
   --radius-outer: 24px;
   --radius-card: 20px;
   --radius-pill: 50px;
   --radius-img: 16px;
 
-  /* Font Family */
+  
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Reset & Global Base */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -59,7 +55,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Main Container Frame */
+
 .app-viewport {
   width: 100%;
   max-width: 1360px;
@@ -77,9 +73,7 @@ body {
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-/* -------------------------------------------------------------
-   NAVIGATION HEADER
-------------------------------------------------------------- */
+
 .navbar {
   display: flex;
   align-items: center;
@@ -143,9 +137,7 @@ body {
   display: none;
 }
 
-/* -------------------------------------------------------------
-   GRID LAYOUTS
-------------------------------------------------------------- */
+
 .dashboard-grid {
   display: grid;
   grid-template-columns: 380px 1fr;
@@ -164,9 +156,7 @@ body {
   gap: 16px;
 }
 
-/* -------------------------------------------------------------
-   CARD COMPONENTS
-------------------------------------------------------------- */
+
 .card {
   border-radius: var(--radius-card);
   padding: 24px;
@@ -182,7 +172,7 @@ body {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
 }
 
-/* Card Variants */
+
 .card-sand {
   background-color: var(--card-sand);
   color: var(--text-dark);
@@ -203,7 +193,7 @@ body {
   color: var(--text-dark);
 }
 
-/* Badges & Typography */
+
 .badge {
   display: inline-block;
   padding: 4px 14px;
@@ -244,7 +234,7 @@ body {
   opacity: 0.85;
 }
 
-/* Media Elements */
+
 .card-media {
   width: 100%;
   border-radius: var(--radius-img);
@@ -286,7 +276,7 @@ body {
   margin-bottom: 16px;
 }
 
-/* Dots Icon */
+
 .title-with-dots {
   display: flex;
   align-items: center;
@@ -307,7 +297,7 @@ body {
   display: inline-block;
 }
 
-/* Avatar Circle */
+
 .flex-between {
   display: flex;
   justify-content: space-between;
@@ -328,7 +318,7 @@ body {
   object-fit: cover;
 }
 
-/* Table Footer in Tan Card */
+
 .card-table-footer {
   margin-top: 16px;
   margin-bottom: 12px;
@@ -348,10 +338,7 @@ body {
   margin-top: 8px;
 }
 
-/* -------------------------------------------------------------
-   BUTTON & HOVER ANIMATION (REQUIREMENT 8)
-   Scale and Color Change effect on Hover
-------------------------------------------------------------- */
+
 .card-footer {
   margin-top: 16px;
   padding-top: 12px;
@@ -371,18 +358,17 @@ body {
   transition: all 0.3s ease;
   position: relative;
 
-  /* Requirement 8: Interactive scaling & color shift container */
+  
   border-radius: 8px;
 }
 
-/* Specific Hover Animation for Buttons: Scale & Color Lighter Effect */
+
 .btn-action:hover {
   transform: scale(1.03); /* Grown slightly larger */
   padding-left: 10px;
   padding-right: 10px;
 }
 
-/* Background Color Change on Hover per Card context */
 .card-sand .btn-action:hover {
   background-color: var(--btn-hover-sand);
   color: #000;
@@ -403,7 +389,6 @@ body {
   color: #000;
 }
 
-/* Arrow Slide Animation */
 .btn-action .arrow {
   font-size: 16px;
   transition: transform 0.3s ease;
@@ -413,12 +398,7 @@ body {
   transform: translateX(5px);
 }
 
-/* -------------------------------------------------------------
-   RESPONSIVE MEDIA QUERIES (REQUIREMENT 5)
-   Laptop, Tablet, Mobile Breakpoints
-------------------------------------------------------------- */
 
-/* Laptop / Medium Desktop (<= 1100px) */
 @media (max-width: 1100px) {
   .dashboard-grid {
     grid-template-columns: 320px 1fr;
@@ -433,7 +413,7 @@ body {
   }
 }
 
-/* Tablet Layout (<= 900px) */
+
 @media (max-width: 900px) {
   .dashboard-grid {
     grid-template-columns: 1fr;
@@ -452,7 +432,7 @@ body {
   }
 }
 
-/* Small Tablet & Mobile Layout (<= 640px) */
+
 @media (max-width: 640px) {
   body {
     padding: 10px;
